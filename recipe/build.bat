@@ -17,7 +17,7 @@ if errorlevel 1 exit 1
 pushd typescript-go
 go-licenses save .\cmd\tsgo --save_path "%SRC_DIR%\library_licenses"
 if errorlevel 1 exit 1
-go build -trimpath -ldflags="-s" -tags noembed -o "%PLATFORM_PACKAGE_DIR%\lib\tsc.exe" .\cmd\tsgo
+go build -trimpath -ldflags="-s -w" -tags noembed -o "%PLATFORM_PACKAGE_DIR%\lib\tsc.exe" .\cmd\tsgo
 if errorlevel 1 exit 1
 copy internal\bundled\libs\* "%PLATFORM_PACKAGE_DIR%\lib\"
 if errorlevel 1 exit 1

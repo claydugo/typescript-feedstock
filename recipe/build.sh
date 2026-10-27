@@ -12,7 +12,6 @@ npm install -ddd \
 
 case "${GOARCH}" in
     amd64) node_arch=x64 ;;
-    ppc64le) node_arch=ppc64 ;;
     *) node_arch=${GOARCH} ;;
 esac
 platform_package_name=typescript-${GOOS}-${node_arch}
